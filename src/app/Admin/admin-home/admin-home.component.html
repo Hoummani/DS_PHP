@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="container">
+    <h3 style="color: #1b4f72">Listes des fonctionnaires</h3>
+  </div>
+  <div class="container">
+
+<button (click)="loadProfs()" class="btn btn-success" style="margin-right: 5px">Lister</button>
+    <button (click)="logOut()" class="btn btn-outline-secondary" style="margin-right: 5px">Deconnexion</button>
+    <button routerLink="/admin/home/ajouterFoctionnaire" class="btn btn-dark">Ajouter Fonctionnaire</button><br>
+    <br>
+
+<div class="container"></div>
+    <table class="table table-bordered">
+      <thead>
+      <tr>
+        <th>Id</th>
+        <th>Nom</th>
+        <th>Prenom</th>
+        <th>Email</th>
+        <th>Status</th>
+
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let et of profs">
+        <td>{{et.id}}</td>
+        <td>{{et.nom}}</td>
+        <td>{{et.prenom}}</td>
+        <td>{{et.email}}</td>
+        <td>{{et.status}}</td>
+
+      </tr>
+
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,72 @@
+<div class="container">
+  <div class="container">
+    <div class="container">
+      <div class="container">
+        <div class="container">
+          <div class="container">
+            <form class="form-signin" method="post" [formGroup]="addFonctionnaireForm" (ngSubmit)="onSubmit()" enctype = "multipart/form-data">
+              <div class="text-center mb-4">
+                <h1 class="h3 mt-3 mb-3 font-weight-normal">Ajouter un fonctionnaire</h1>
+                <p>Page d'ajout des divers fonctionnaires </p>
+                <hr>
+              </div>
+              <div *ngIf="error" class="alert alert-danger" role="alert">
+                Ops: {{ error }}
+              </div>
+              <div class="form-group">
+                <label for="nom">Nom</label>
+
+                <input type="text" class="form-control" id="nom"  name="nom" formControlName="nom"
+                       ariadescribedby="nomHelp" placeholder="Enter le nom">
+              </div>
+
+              <div class="form-group">
+                <label for="prenom">Prenom</label>
+
+                <input type="text" class="form-control" id="prenom"  name="prenom" formControlName="prenom"
+                       ariadescribedby="prenomHelp" placeholder="Enter le prenom">
+              </div>
+
+              <div class="form-group">
+                <label for="password">Email</label>
+
+
+                <input type="email" class="form-control" id="email" formControlName="email" name="email"
+                       placeholder="email">
+
+
+
+              </div>
+
+
+              <div class="form-group">
+                <label for="password">Password</label>
+
+
+                <input type="password" class="form-control" id="password" formControlName="password" name="password"
+                       placeholder="Password">
+
+
+
+              </div>
+
+              <div class="form-group">
+                <label for="status">Status</label>
+
+                <!--<input type="select" class="form-control" id="status"  name="status" formControlName="status"
+                       ariadescribedby="statusHelp" placeholder="Selectionner le status">-->
+                <select class="form-control" id="status"  name="status" formControlName="status">
+                  <option>Professeur</option>
+                  <option>Scolarite</option>
+                </select>
+              </div>
+
+              <button [disabled]="!addFonctionnaireForm.valid" class="btn btn-lg btn-primary btn-block mt-2">Ajouter</button>
+              <button class="btn btn-secondary btn-block mt-2" type="reset">Effacer</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
